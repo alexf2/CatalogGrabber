@@ -1,0 +1,21 @@
+LIBRARY      HOOK
+DESCRIPTION  'Procedure Hook DLL (c)1993 James M. Finnegan'
+EXETYPE      WINDOWS
+CODE         PRELOAD MOVEABLE DISCARDABLE
+DATA         PRELOAD MOVEABLE SINGLE
+HEAPSIZE     8192
+EXPORTS
+             SetProcAddress     @1
+             SetProcRelease     @2
+             ProcHook           @3
+             ProcUnhook         @4
+             GetFirstHMaster    @5
+             GetNextHMaster     @6
+             GetFirstHChild     @7
+             GetNextHChild      @8
+             GetOrdFromAddr     @9
+             GetNameFromOrd     @10
+             WEP                PRIVATE
+IMPORTS
+             AllocCStoDSAlias=KERNEL.170
+
